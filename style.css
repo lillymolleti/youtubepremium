@@ -8,7 +8,7 @@ html, body {
 } */
 @font-face {
   font-family: YouTubeSansBold;
-  src: url("fonts/YouTubeSansBold.otf") format("opentype");
+  src: url("YouTubeSansBold.otf") format("opentype");
   font-weight: bold;
   font-style: normal;
 }
@@ -26,6 +26,7 @@ html, body {
   /* Perfect dark gradient overlay on a background image */
   background-image: linear-gradient(
       to bottom,
+      #0f0f0f 100%,
       rgba(15, 15, 15, 0.6) 0%,
       rgba(15, 15, 15, 0.8) 40%,
       rgba(15, 15, 15, 1) 85%,
@@ -226,7 +227,7 @@ html, body {
   width: 300px;
 }
 .spacing {
-  margin: 20px;
+  margin: 40px;
 }
 .bg1 {
   background-color: #0f0f0f;
