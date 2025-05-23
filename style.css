@@ -299,3 +299,29 @@ html, body {
   height: 100%;
 
 } */
+ .yt-prem-try
+ {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius:18px;
+  padding:20px;
+  gap:30px;
+  font-family:Roboto, sans-serif;
+ }
+ .faq
+ {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:15px 0px;
+  font-family:Roboto, sans-serif;
+ }
+ .faq-container
+ {
+  background-color: #222222;
+  margin:100px;
+  border-radius:10px;
+  padding:30px;
+ }
