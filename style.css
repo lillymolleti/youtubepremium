@@ -6,6 +6,7 @@
 html, body {
   overflow: hidden; 
 } */
+ 
 @font-face {
   font-family: YouTubeSansBold;
   src: url("YouTubeSansBold.otf") format("opentype");
@@ -20,19 +21,20 @@ html, body {
 }
 .container {
   height: 100vh;
-  width: 100vw;
-  overflow: auto;
+  width: 100%;
+  overflow-x: hidden;
   scrollbar-width: none;
-  /* Perfect dark gradient overlay on a background image */
+  background-color: #0f0f0f;
+  /* Perfect dark gradient overlay on a background image
   background-image: linear-gradient(
       to bottom,
-      #0f0f0f 100%,
+      #0f0f0f 0%,
       rgba(15, 15, 15, 0.6) 0%,
       rgba(15, 15, 15, 0.8) 40%,
-      rgba(15, 15, 15, 1) 85%,
+      rgba(15, 15, 15, 1) 75%,
       #0f0f0f 100%
     ),
-    url("https://img.freepik.com/free-vector/dark-gradient-background-with-copy-space_53876-99548.jpg?semt=ais_hybrid&w=740");
+    url("https://img.freepik.com/free-vector/dark-gradient-background-with-copy-space_53876-99548.jpg?semt=ais_hybrid&w=740"); */
 
   background-size: cover;
   background-position: center;
@@ -99,21 +101,59 @@ html, body {
   align-items: center;
   gap: 10px;
 }
-.rightNav img:nth-child(3) {
+.rightNav img:nth-child(5) {
   width: 30px;
   height: 30px;
   border-radius: 50%;
 }
 .ytdesc {
+  position: relative;
+  height: 130vh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  gap:8px;
   width: 100%;
-  padding: 20px;
 }
 
+/* Gradient layers */
+.hero__gradient {
+  position: absolute;
+  inset: 0;
+  opacity: .8;
+  pointer-events: none;
+}
+
+.hero__gradient--1 {
+  background: radial-gradient(65% 65% at 30% 40%, #ff4e45 0%, rgba(255, 255, 255, 0.1) 70%);
+}
+
+.hero__gradient--2 {
+  background: radial-gradient(50% 50% at 70% 30%, #1F223C 0%, rgba(255,138,0,0) 70%);
+}
+
+.hero__gradient--3 {
+  background: radial-gradient(55% 55% at 20% 80%, #c73e9b 0%, rgba(199,62,155,0.1) 70%);
+}
+
+.hero__gradient--4 {
+  background: linear-gradient(to bottom, rgba(15,15,15,0) 50%, #0f0f0f 100%);
+  opacity: 1;
+}
+.navBar
+{
+  z-index: 2;
+}
+.yt-prem-logo-container,
+.heading,
+.yttextdesc-container,
+.get-button,
+.plan-cta {
+  position: relative;
+  z-index: 1;
+}
 .yt-prem-logo-container {
   margin-top: 60px;
   margin-bottom: 15px;
@@ -135,6 +175,7 @@ html, body {
 }
 .yttextdesc {
   color: white;
+  line-height: 1.5;
   font-family: Roboto, sans-serif;
   margin-top: 8px;
 }
@@ -175,7 +216,7 @@ html, body {
 .features-container {
   display: flex;
   justify-content: center;
-  background-color: #0f0f0f; /* match container's black */
+  background-color:rgba(15, 15, 15, 1);  /* match container's black */
   padding: 40px 0;
   margin-bottom: 40px;
 }
@@ -210,18 +251,32 @@ html, body {
   margin-top: 30px;
 
 }
+.membership-header
+{
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 10px;
+}
 .membership-type {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background-color: #1d1d1d;
   color: white;
   font-family: Roboto,sans-serif;
-  gap: 20px;
+  gap: 8px;
   margin-top: 30px;
   border-radius: 18px;
   padding: 20px;
+}
+.membership-duration
+{
+  margin:0;
+  padding: 0;
+  color:grey;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
 }
 .membership-type > hr {
   width: 300px;
@@ -293,35 +348,137 @@ html, body {
 {
   background-image: url('https://www.gstatic.com/youtube/img/promos/growth/premium_lp2_large_feature_MusicModuleSquare_phone_640x550.webp');
 }
-/* .right-bg-img
+/* Responsiveness */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 360px) 
 {
-  width: 100%;
-  height: 100%;
+  .leftNav img:nth-child(1) {
+    width: 26px;
+    height: 26px;
+  }
+  .leftNav img:nth-child(2) {
+    width: 80px;
+    height: 80px;
+  }
+  .leftNav {
+    gap: 13px;
+  }
+  .centerNav {
+    display: none;
+  }
+  .rightNav img:nth-child(5) {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+  }
+  .rightNav img:nth-child(2),.rightNav img:nth-child(4) {
+    display: none;
+  }
+  .rightNav img:nth-child(6) {
+    width: 30px;
+    height: 30px;
+  }
+  .ytdesc
+  {
+    min-height:100vh;
+  }
+  .yt-prem-logo-img 
+  {
+    min-width: 25%;
+    height: 65%;
+  } 
+  .heading {
+    font-size: 35px;
+    font-family: YouTubeSansBold;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    /* margin: 10px; */
+  }
+  p
+  {
+    font-size: 14px;
+  }
 
-} */
- .yt-prem-try
- {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius:18px;
-  padding:20px;
-  gap:30px;
-  font-family:Roboto, sans-serif;
- }
- .faq
- {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding:15px 0px;
-  font-family:Roboto, sans-serif;
- }
- .faq-container
- {
-  background-color: #222222;
-  margin:100px;
-  border-radius:10px;
-  padding:30px;
- }
+  .features-container {
+    flex-direction: column;
+    background-color: rgba(15, 15, 15, 1);
+    margin:0;
+    padding: 0;
+
+}
+  .feature {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding:0;
+    gap:6px;
+    margin:auto;
+    color: white;
+    font-size: 14px;
+    height: 140px;
+    width:300px;
+} 
+  .feature-img {
+    height: 80px;
+    width: 80px;
+  }
+  .heading {
+    font-size: 35px;
+    font-family: YouTubeSansBold;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+}
+ .membership {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px 0px;
+}
+
+
+
+}
+@media only screen and (min-width: 361px )and (max-width: 600px) 
+{
+  .leftNav img:nth-child(1) {
+    width: 26px;
+    height: 26px;
+}
+.leftNav {
+    gap: 23px;
+}
+.centerNav
+{
+  display: none;
+}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 601px) and (max-width: 767px) 
+{
+
+
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991px)
+{
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1199px)
+{
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) 
+{
+
+}

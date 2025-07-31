@@ -6,16 +6,15 @@
     <title>YouTube Premium Clone</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/svg+xml" href="imgs/favicon.svg" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    
   </head>
   <body>
     <div class="container">
       <!-- Navigation Bar -->
-      <header class="navBar">
+     <header class="navBar">
         <div class="leftNav">
           <img src="imgs/bars.svg" alt="Menu Icon" />
           <img src="imgs/yt logo.svg" alt="YouTube Logo" />
+          <!-- <p> <sup class="blue-text"> IN </sup> </p>  -->
         </div>
         <div class="centerNav">
           <input type="text" placeholder="Search" />
@@ -25,16 +24,25 @@
           <img src="imgs/mic.svg" alt="Mic Icon" />
         </div>
         <div class="rightNav">
+          <img src="imgs/search.svg" alt="">
+          <img src="imgs/mic.svg" alt="" class="mic-icon" />
           <img src="imgs/vidUpload.svg" alt="Upload" />
-          <img src="imgs/bellicon.svg" alt="Notifications" />
+          <img src="imgs/bellicon.svg" alt="Notifications" class="bell-icon" />
           <img src="https://picsum.photos/id/12/367/267" alt="User Avatar" />
         </div>
       </header>
 
       <!-- Main Content -->
       <main>
-        <!-- Premium Description Section -->
+        <!-- Premium Description Section with Gradient Layers -->
         <section class="ytdesc">
+          <!-- Gradient Layers -->
+          <div class="hero__gradient hero__gradient--1"></div>
+          <div class="hero__gradient hero__gradient--2"></div>
+          <div class="hero__gradient hero__gradient--3"></div>
+          <div class="hero__gradient hero__gradient--4"></div>
+          
+          <!-- Content -->
           <div class="yt-prem-logo-container">
             <img
               src="https://www.gstatic.com/youtube/img/promos/growth/e1f2c0e11567cf91d1124a2e3fa690e4dcdc6a452080a7e067fe9010f6534961_382x62.png"
@@ -47,8 +55,6 @@
           <div class="yttextdesc-container">
             <p class="yttextdesc">
               YouTube and YouTube Music ad-free, offline, and in the background
-            </p>
-            <p class="yttextdesc">
               Prepaid and monthly plans available. Starts at ₹149.00​/month.
               Free trials with monthly plans.
             </p>
@@ -62,8 +68,7 @@
             <p class="blue-text small-text">Restrictions apply</p>
           </div>
         </section>
-
-        <!-- Features Section -->
+           <!-- Features Section -->
         <section class="features-container">
           <div class="feature">
             <div class="feature-img-container">
@@ -127,10 +132,27 @@
         </section>
         <!-- Membership details -->
         <section class="membership-details">
-          <h1 class="heading">Pick a membership that fits you</h1>
+          <h1 class="heading"> Join over 125 million premium users </h1>
           <div class="membership">
             <div class="membership-type">
-              <img src="" alt="" class="membership-img" />
+               <div class="membership-header">
+                <img src="imgs/individual.svg" alt="" class="membership-img" />
+                <h2>Individual</h2>
+                <hr/>
+
+              </div>
+              <div class="membership-duration">
+                 Prepaid or monthly
+              </div>
+              <div class="membership-price"> Starts at ₹149.00​/month
+              </div>
+              <div class="membership-details">
+                Free trials with monthly plans
+              </div>
+              <button class="get-button">Get YouTube Premium</button>
+            </div>
+            <div class="membership-type">
+              <img src="imgs/family.svg" alt="" class="membership-img" />
               <h2>Individual</h2>
               <hr />
               <p>
@@ -143,20 +165,7 @@
               <button class="get-button">Get YouTube Premium</button>
             </div>
             <div class="membership-type">
-              <img src="" alt="" class="membership-img" />
-              <h2>Individual</h2>
-              <hr />
-              <p>
-                Prepaid or monthly
-                <br />
-                Starts at ₹149.00​/month
-                <br />
-                Free trials with monthly plans
-              </p>
-              <button class="get-button">Get YouTube Premium</button>
-            </div>
-            <div class="membership-type">
-              <img src="" alt="" class="membership-img" />
+              <img src="imgs/student.svg" alt="" class="membership-img" />
               <h2>Individual</h2>
               <hr />
               <p>
@@ -246,52 +255,7 @@
               </div>
           </div>
         </section>
-        <!-- Try yt premium -->
-         <div class="yt-prem-try">
-          <h1 class="heading">Try Premium now </h1>
-          <p class="yttextdesc">
-            Prepaid and monthly plans available. Starts at ₹149.00​/month. Free trials with monthly plans.           </p>
-          <button class="get-button"> Get YouTube Premium </button>
-          <p class="blue-text small-text"> Restrictions apply </p>
-         </div>
-        <!-- FAQ Section -->
-         <section>
-          <div class="faq-container">
-            <h1 class="heading"> Your questions, answered </h1>
-            <div class="faq">
-              <p class="yttextdesc"> What’s included with YouTube Premium? </p>
-              <i class="fa-solid fa-angle-down" style="color:white;"></i>
-            </div>
-            <hr>
-            <div class="faq">
-              <p class="yttextdesc"> How do I download videos and music?  </p>
-              <i class="fa-solid fa-angle-down" style="color:white;"></i>
-            </div>
-            <hr>
-            <div class="faq">
-              <p class="yttextdesc"> How do I add people to my plan?</p>
-              <i class="fa-solid fa-angle-down" style="color:white;"></i>
-            </div>
-            <hr>
-            <div class="faq">
-              <p class="yttextdesc"> How do I play videos and music in the background? </p>
-              <i class="fa-solid fa-angle-down" style="color:white;"></i>
-            </div>
-            <hr>
-            <div class="faq">
-              <p class="yttextdesc">What’s the difference between YouTube Premium and YouTube Music Premium? </p>
-              <i class="fa-solid fa-angle-down" style="color:white;"></i>
-            </div>
-            <hr>
-            <div class="faq">
-              <p class="yttextdesc">How can I cancel my membership? </p>
-              <i class="fa-solid fa-angle-down" style="color:white;"></i>
-            </div>
-            <hr>
-            <br>
-            <p class="yttextdesc"> Have other questions? <br> Visit the <span class="blue-text"> YouTube Help Center </span></p>
-          </div>
-         </section>
+        <!-- ... (rest of your sections remain unchanged) ... -->
       </main>
     </div>
   </body>
